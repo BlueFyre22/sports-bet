@@ -140,7 +140,9 @@ function draftTeam() {
 }
 
 
-
+function drawHighScore() {
+  document.getElementById("high-score").innerHTML = localStorage.getItem("high-score")
+}
 
 
 
@@ -191,9 +193,13 @@ function teamBet(team, betAmount) {
 }
 
 function highScore(newBank) {
-  if (newBank > bank) {
-    document.getElementById("high-score").innerHTML = `<span>$</span>` + newBank
+  let highScore = localStorage.getItem("high-score")
+
+  if (newBank > highScore) {
+    localStorage.setItem("high-score", newBank)
+    drawHighScore()
+    // document.getElementById("high-score").innerHTML = `<span>$</span>` + newBank
   }
 }
-
+drawHighScore()
 draftTeam()
