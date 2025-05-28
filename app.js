@@ -57,11 +57,11 @@ function drawTeam1() {
   for (let i = 0; i < players.length; i++) {
     const player = players[i];
     if (player.teamNumber == 1) {
-      team1Content += player.emoji
+      team1Content += `<span title="${player.name}">${player.emoji}</span>`
     }
   }
   // console.log(team1Content)
-  team1Container.innerText = team1Content
+  team1Container.innerHTML = team1Content
 }
 
 function drawTeam2() {
@@ -71,11 +71,11 @@ function drawTeam2() {
   for (let i = 0; i < players.length; i++) {
     const player = players[i];
     if (player.teamNumber == 2) {
-      team2Content += player.emoji
+      team2Content += `<span title="${player.name}">${player.emoji}</span>`
     }
   }
   // console.log(team2Content)
-  team2Container.innerText = team2Content
+  team2Container.innerHTML = team2Content
 }
 
 
